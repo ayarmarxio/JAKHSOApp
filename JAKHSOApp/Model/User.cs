@@ -8,7 +8,7 @@ namespace JAKHSOApp.Model
 {
    public class User
     {
-       private int _userId;
+        private int _userId;
         private string _nameOfUser;
         private string _surname;
         private string _userPassword;
