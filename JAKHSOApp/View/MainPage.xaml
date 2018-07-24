@@ -9,5 +9,37 @@
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Column="1" Background="AliceBlue">
+            <Image>
+                                                                                                                               
+            </Image>
+            
+            <TextBlock>
+                
+            </TextBlock>
+            
+            <TextBox>
+                
+            </TextBox>
+            
+            <TextBlock>
+                
+            </TextBlock>
+            
+            <TextBox>
+                
+            </TextBox>
+
+            <Button>
+                
+            </Button>
+            
+        </StackPanel>
+        
     </Grid>
 </Page>
