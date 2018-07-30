@@ -122,7 +122,9 @@
     <None Include="JAKHSOApp_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\Loginbackground.jpg" />
     <Content Include="Assets\JAKHSOLogo.png" />
+    <Content Include="Assets\TaskPagepic.jpg" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />

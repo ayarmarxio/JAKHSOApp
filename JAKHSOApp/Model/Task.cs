@@ -66,11 +66,11 @@ namespace JAKHSOApp.Model
 
         public Task(int taskid, string taskname, string taskschedule, string registration,string tasktype,DateTime duedate,DateTime donedate, string donevar)
         {
-            _taskId = taskid;
+            _taskId = TaskId;
             _taskName = taskname;
             _taskSchedule = taskschedule;
             _registration = registration;
-            _taskType = tasktype;
+            _taskType = TaskType;
             _dueDate = duedate;
             _doneDate = donedate;
             _doneVar = donevar;

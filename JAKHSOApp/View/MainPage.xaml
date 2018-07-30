@@ -7,39 +7,59 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
+
+    <Grid>
+        <Grid.Background><ImageBrush ImageSource="../Assets/Loginbackground.jpg"></ImageBrush></Grid.Background>
+       
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="2*"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-        <StackPanel Grid.Column="1" Background="AliceBlue">
-            <Image>
-                                                                                                                               
-            </Image>
-            
-            <TextBlock>
-                
-            </TextBlock>
-            
-            <TextBox>
-                
-            </TextBox>
-            
-            <TextBlock>
-                
-            </TextBlock>
-            
-            <TextBox>
-                
-            </TextBox>
 
-            <Button>
-                
-            </Button>
-            
+        <StackPanel Grid.Column="0" Background="Transparent" >
+          <TextBlock Margin="0,200,0,0" Text="INSTRUMENT MAINTAINANCE LOG"/> 
         </StackPanel>
-        
+
+
+        <StackPanel Grid.Column="1" Background="Transparent">
+            
+
+                <TextBlock Margin="0,300,0,0" Text="USERNAME"  />
+                
+            <TextBox FontSize="23" Height="40" Width="250"
+                     BorderThickness="3" Background="Transparent" 
+                     Text="{Binding CurrentUser.Username, Mode=TwoWay}"
+                     BorderBrush = "Red" HorizontalAlignment="Left"/>
+
+            <TextBlock Text="PASSWORD" Margin=" 00,12,50,-88 " Height="100"/>
+
+            <PasswordBox FontSize="23" Height="40" Width="250" Background="Transparent" BorderBrush="Red"
+                         Password="{Binding CurrentUser.UserPassword, Mode=TwoWay}" HorizontalAlignment="Left" RenderTransformOrigin="0.491,-2.613" VerticalAlignment="Stretch">
+                <PasswordBox.RenderTransform>
+                    <CompositeTransform ScaleY="-1" TranslateY="261.492"/>
+                </PasswordBox.RenderTransform>
+            </PasswordBox>
+
+            <Button Content="LOG IN"
+                    FontSize="20"
+                    HorizontalAlignment ="Center"
+                    
+                    Height ="50"
+                    Width ="250"
+                    BorderBrush="Transparent"
+                    Foreground="White"
+                    Background="Transparent"
+                    Command="{Binding CheckCommand}" Margin="0,40,0,0" VerticalAlignment="Center" RenderTransformOrigin="0.5,0.5">
+                <Button.RenderTransform>
+                    <CompositeTransform Rotation="-0.766"/>
+                </Button.RenderTransform>
+            </Button>
+
+
+        </StackPanel>
+
     </Grid>
 </Page>
+
