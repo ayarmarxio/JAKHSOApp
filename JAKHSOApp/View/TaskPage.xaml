@@ -10,26 +10,14 @@
          <Grid>
         <Grid.Background><ImageBrush ImageSource="../Assets/TaskPagepic.jpg"></ImageBrush>
 
-        </Grid.Background>
-         <Grid.RowDefinitions>
-             <RowDefinition Height="*"/>
-             <RowDefinition Height="*"/>
-             <RowDefinition Height="*"/>
-             <RowDefinition Height="*"/>
-             <RowDefinition Height="*"/>
-             <RowDefinition Height="*"/>
-             <RowDefinition Height="*"/>
-             <RowDefinition Height="*"/>
-             <RowDefinition Height="8*"/>
-        </Grid.RowDefinitions>
-
+     
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="2*"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-       
+         <Grid Column="0"></Grid>
 
 
     </Grid>
