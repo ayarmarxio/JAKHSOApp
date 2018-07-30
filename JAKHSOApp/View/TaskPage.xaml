@@ -8,14 +8,14 @@
     mc:Ignorable="d">
     
          <Grid>
-         <!--<Grid.Background>
+         <Grid.Background>
             <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
                     <GradientStop Color="#b0e0d4" Offset="0.0"/>
                     <GradientStop Color="White" Offset="0.25"/>
                     <GradientStop Color="White" Offset="0.75"/>
                     <GradientStop Color="White" Offset="1.0"/>
             </LinearGradientBrush> 
-        </Grid.Background>-->
+          </Grid.Background>
              
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
@@ -33,11 +33,12 @@
             <Image Source="../Assets/Icon.png" Height="80px" HorizontalAlignment="Left" Margin="10,10,10,10"/>
             <Image Source="../Assets/JAKHSOApp.png" Height="27px" HorizontalAlignment="Left"/>
          </StackPanel>        
-         <Button Content="LOG OUT" Command="{Binding CheckCommand}"
+         <Button Grid.Row="1" Content="LOG OUT" Command="{Binding CheckCommand}"
                     Margin="0,0,0,0" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center"
                     Width ="250" Height ="50"
                     FontSize="20" Foreground="#454b53" Background="#b0e0d4" BorderBrush="Transparent"/>
-        <StackPanel Grid.Row="1" Background="#454b53">            
+        
+            <StackPanel Grid.Row="1" Grid.Column="0" Background="#454b53">            
             <Button Content="TASKS" Command="{Binding CheckCommand}"
                     HorizontalAlignment="Center" VerticalAlignment="Center"
                     Width ="250" Height ="75"
@@ -64,8 +65,9 @@
                     FontSize="23" Foreground="White" BorderBrush="Transparent" Background="Transparent"/>
             <Line Fill="White" Stroke="White" Height="0.5" StrokeThickness="2" X1="480"/>
         </StackPanel>
-        <StackPanel Name="TaskPanel" Grid.Row="1" Grid.Column="1" >
-            <ListView Name="TaskList" Background="Aqua" Height="800px" Width="500"
+        <StackPanel Name="Task
+                    Panel" Grid.Row="1" Grid.Column="1" >
+            <ListView Name="TaskList" Background="Aqua" Height="500px" Width="500"
                       ItemsSource="{Binding UndoneTaskCollection, Mode=TwoWay}">              
                     <ListView.ItemTemplate>
                         <DataTemplate x:DataType="x:String">
