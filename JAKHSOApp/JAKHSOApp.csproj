@@ -122,6 +122,7 @@
     <None Include="JAKHSOApp_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\download.png" />
     <Content Include="Assets\Icon.png" />
     <Content Include="Assets\JAKHSOApp.png" />
     <Content Include="Assets\Loginbackground.jpg" />
