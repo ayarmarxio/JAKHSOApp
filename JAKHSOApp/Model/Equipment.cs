@@ -29,11 +29,11 @@ namespace JAKHSOApp.Model
             set { _equipmentType = value; }
         }
 
-        public Equipment ( int equipmentid,string equipmentname,string equipmenttype)
+        public Equipment ( int equipmentiId,string equipmentname,string equipmenttype)
         {
-            _equipmentId = equipmentid;
+            _equipmentId = equipmentiId;
             _equipmentName = equipmentname;
-            _equipmentType = equipmenttype;
+            _equipmentType = EquipmentType;
         }
     }
 }
