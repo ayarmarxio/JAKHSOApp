@@ -5,13 +5,16 @@
     xmlns:local="using:JAKHSOApp.View"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:viewModel="using:JAKHSOApp.ViewModel"
     mc:Ignorable="d">
 
         
     <Grid>
-             
-        
-             
+        <Grid.DataContext>
+            <viewModel:TaskVm/>
+        </Grid.DataContext>
+
+
         <Grid.Background>
             <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
                 <GradientStop Color="#b0e0d4" Offset="0.0"/>
@@ -47,27 +50,27 @@
         
             <StackPanel Grid.Row="1" Grid.Column="0" Background="#454b53">  
                 
-            <Button Content="TASKS" Command="{Binding CheckCommand}"
+            <Button Content="TASKS" 
                     HorizontalAlignment="Center" VerticalAlignment="Center"
                     Width ="250" Height ="75"
                     FontSize="23" Foreground="White" BorderBrush="Transparent" Background="Transparent"/>
             <Line Fill="White" Stroke="White" Height="0.5" StrokeThickness="2" X1="480"/>
-            <Button Content="STATIONS" Command="{Binding CheckCommand}" 
+            <Button Content="STATIONS"  
                     Margin="0,0,0,0" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center"
                     Width ="250" Height ="75"
                     FontSize="23" Foreground="White" BorderBrush="Transparent" Background="Transparent"/>
             <Line Fill="White" Stroke="White" Height="0.5" StrokeThickness="2" X1="480"/>
-            <Button Content="EQUIPMENT" Command="{Binding CheckCommand}" 
+            <Button Content="EQUIPMENT"  
                     Margin="0,0,0,0" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center"
                     Width ="250" Height ="75"
                     FontSize="23" Foreground="White"  BorderBrush="Transparent" Background="Transparent"/>
             <Line Fill="White" Stroke="White" Height="0.5" StrokeThickness="2" X1="480"/>
-            <Button Content="USERS" Command="{Binding CheckCommand}" 
+            <Button Content="USERS"  
                     Margin="0,0,0,0" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center"
                     Width ="250" Height ="75"
                     FontSize="23" Foreground="White" BorderBrush="Transparent" Background="Transparent"/>
             <Line Fill="White" Stroke="White" Height="0.5" StrokeThickness="2" X1="480"/>
-            <Button Content="HISTORY" Command="{Binding CheckCommand}" 
+            <Button Content="HISTORY" 
                     Margin="0,0,0,0" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center"
                     Width ="250" Height ="75"
                     FontSize="23" Foreground="White" BorderBrush="Transparent" Background="Transparent"/>
@@ -76,7 +79,7 @@
         <StackPanel Name="Taskpage" Grid.Row="1" Grid.Column="1" >
                    
             <ListView Name="TaskList" Background="Aqua" Height="420px" Width="500"
-                      ItemsSource="{Binding UndoneTaskCollection, Mode=TwoWay}">              
+                      ItemsSource="{Binding TaskCollection , Mode=TwoWay}">              
                     <ListView.ItemTemplate>
                         <DataTemplate x:DataType="x:String">
                             <Grid>
@@ -84,7 +87,7 @@
                                     <ColumnDefinition Width="47"/>
                                     <ColumnDefinition/>
                                 </Grid.ColumnDefinitions>
-                                <Image Source="Assets/placeholder.png" Width="32" Height="32" 
+                                <Image Width="32" Height="32" 
                        HorizontalAlignment="Left"/>
                                 <TextBlock Text="{x:Bind}" Foreground="Teal" 
                            FontSize="23" Grid.Column="1"/>
