@@ -17,7 +17,7 @@ namespace JAKHSOApp.Persistency
 
         #region instance fields
         // Server URL is our web Api URL
-        private const string ServerUrl = "http://denmarklogservice20180718012839.azurewebsites.net/";
+        private const string ServerUrl = "http://webappjakhso20180801025902.azurewebsites.net/";
         public string ApiPrefix = "api/";
         private HttpClientHandler _httpClientHandler;
         private HttpClient _httpClient;
@@ -52,6 +52,5 @@ namespace JAKHSOApp.Persistency
                 return null;
             }
         }
-
     }
 }
