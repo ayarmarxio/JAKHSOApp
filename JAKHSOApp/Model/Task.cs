@@ -64,7 +64,7 @@ namespace JAKHSOApp.Model
             set { _doneVar = value; }
         }
 
-        public Task(int taskid, string taskname, string taskschedule, string registration,string tasktype,DateTime duedate,DateTime donedate, string donevar)
+        public Task (int taskid, string taskname, string taskschedule, string registration,string tasktype,DateTime duedate,DateTime donedate, string donevar)
         {
             _taskId = TaskId;
             _taskName = taskname;
@@ -75,5 +75,17 @@ namespace JAKHSOApp.Model
             _doneDate = donedate;
             _doneVar = donevar;
         }
+
+        //public Task()
+        //{
+
+        //}
+
+        public override string ToString()
+        {
+            return ("Hi my name is " +_taskName);
+        }
+
+
     }
 }

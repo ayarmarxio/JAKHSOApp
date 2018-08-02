@@ -35,5 +35,10 @@ namespace JAKHSOApp.Model
             _equipmentName = equipmentname;
             _equipmentType = EquipmentType;
         }
+
+        public override string ToString()
+        {
+            return ("Hi my name is " + _equipmentName);
+        }
     }
 }
