@@ -13,7 +13,7 @@ namespace JAKHSOApp.Handlers
     public class TaskHandler
     {
        
-        private IPersistancyFactory<Model.Task> _loadTaskFromPersistancy = new PersistencyFactory<Model.Task>();
+        private IPersistancyFactory<Model.Task>  _loadTaskFromPersistancy = new PersistencyFactory<Model.Task>();
 
         public ObservableCollection<Model.Task> RetrievedUndoneTaskCollection(string targetTable)
         {
