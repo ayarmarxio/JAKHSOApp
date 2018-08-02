@@ -83,7 +83,7 @@ namespace JAKHSOApp.Model
 
         public override string ToString()
         {
-            return ("Hi my name is " +_taskName);
+            return ("Task Name:  " +_taskName);
         }
 
 

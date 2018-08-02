@@ -53,5 +53,10 @@ namespace JAKHSOApp.Model
             _userPassword = userpassword;
             _userPassword = usertype;
         }
+
+        public override string ToString()
+        {
+            return("NameOfUser:  " + _nameOfUser);
+        }
     }
 }

@@ -36,5 +36,10 @@ namespace JAKHSOApp.Model
             _stationName = stationname;
             _stationAddress = stationadress;
         }
+
+        public override string ToString()
+        {
+            return ("Station Name:  " + _stationName);
+        }
     }
 }

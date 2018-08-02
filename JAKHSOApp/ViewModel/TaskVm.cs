@@ -15,12 +15,13 @@ namespace JAKHSOApp.ViewModel
     {
         // Fields
         private ObservableCollection<Model.Task> _taskCollection;
+       
         private TaskHandler _taskHandler;
-
-
+       
+        
         // Properties
         public ObservableCollection<Model.Task> TaskCollection {get; set;}
-
+       
         
 
         //Constructor
@@ -31,5 +32,6 @@ namespace JAKHSOApp.ViewModel
             TaskCollection = _taskHandler.RetrievedUndoneTaskCollection("Tasks");            
         }
 
+       
     }
 }

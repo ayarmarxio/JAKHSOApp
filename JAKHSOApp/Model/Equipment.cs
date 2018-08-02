@@ -38,7 +38,7 @@ namespace JAKHSOApp.Model
 
         public override string ToString()
         {
-            return ("Hi my name is " + _equipmentName);
+            return ("Eqipment Name:  " + _equipmentName);
         }
     }
 }

@@ -95,12 +95,12 @@
                     </ListView.ItemTemplate>-->             
                 </ListView>
             <Button Name="DoneButton" Content="DONE"
-                    Height="40" Width="500" VerticalAlignment="Center" HorizontalAlignment="Center"
+                    Height="40" Width="375" VerticalAlignment="Center" HorizontalAlignment="Center"
                     Background="DarkOliveGreen" Foreground="AliceBlue" 
                     FontSize="15"></Button>
             <StackPanel Name="DeleteEditButtons" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">               
             <Button Name="DeleteButton" Content="DELETE" 
-                    Height="40" Width="500" FontSize="15" 
+                    Height="40" Width="375" FontSize="15" 
                     Background="darkolivegreen" Foreground="AliceBlue"/>
             </StackPanel>
         </StackPanel>
