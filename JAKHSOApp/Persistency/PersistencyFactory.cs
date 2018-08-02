@@ -42,8 +42,8 @@ namespace JAKHSOApp.Persistency
                         if (task5.Result.IsSuccessStatusCode)
                         {
                             var task51 = await task5.Result.Content.ReadAsStringAsync();
-                            var listt = JsonConvert.DeserializeObject<ObservableCollection<T>>(task51);
-                            return listt;
+                            var list = JsonConvert.DeserializeObject<ObservableCollection<T>>(task51);
+                            return list;
                         }
                     }
                 }
