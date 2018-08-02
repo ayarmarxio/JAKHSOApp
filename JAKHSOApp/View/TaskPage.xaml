@@ -14,7 +14,6 @@
             <viewModel:TaskVm/>
         </Grid.DataContext>
 
-
         <Grid.Background>
             <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
                 <GradientStop Color="#b0e0d4" Offset="0.0"/>
@@ -79,9 +78,9 @@
         <StackPanel Name="Taskpage" Grid.Row="1" Grid.Column="1" >
                    
             <ListView Name="TaskList" Background="Aqua" Height="420px" Width="500"
-                      ItemsSource="{Binding TaskCollection , Mode=TwoWay}">              
-                    <ListView.ItemTemplate>
-                        <DataTemplate x:DataType="x:String">
+                      ItemsSource="{Binding TaskCollection , Mode=TwoWay}" Margin="200,0,200,0">              
+                    <!--<ListView.ItemTemplate>
+                        <DataTemplate>
                             <Grid>
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="47"/>
@@ -93,7 +92,7 @@
                            FontSize="23" Grid.Column="1"/>
                             </Grid>
                         </DataTemplate>
-                    </ListView.ItemTemplate>             
+                    </ListView.ItemTemplate>-->             
                 </ListView>
             <Button Name="DoneButton" Content="DONE"
                     Height="40" Width="500" VerticalAlignment="Center" HorizontalAlignment="Center"

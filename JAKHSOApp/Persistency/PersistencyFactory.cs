@@ -18,6 +18,8 @@ namespace JAKHSOApp.Persistency
         #region instance fields
         // Server URL is our web Api URL
         private const string ServerUrl = "http://webappjakhso20180801025902.azurewebsites.net/";
+         // another web api http://jakhsowebapp20180801104841.azurewebsites.net/
+
         public string ApiPrefix = "api/";
         private HttpClientHandler _httpClientHandler;
         private HttpClient _httpClient;
@@ -51,6 +53,13 @@ namespace JAKHSOApp.Persistency
                 }
                 return null;
             }
+        }
+
+        public ObservableCollection<T> RetrieveCollection (string targetTable)
+        {
+            Task<ObservableCollection<T>> loadedFromAzure = this.Load(targetTable);
+            ObservableCollection<T> collection = loadedFromAzure.Result;
+            return collection;
         }
     }
 }

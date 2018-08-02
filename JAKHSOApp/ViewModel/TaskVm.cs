@@ -4,32 +4,31 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using JAKHSOApp.Handlers;
 using JAKHSOApp.Interfaces;
 using JAKHSOApp.Persistency;
+using JAKHSOApp.Model;
 
 namespace JAKHSOApp.ViewModel
 {
     public class TaskVm
     {
         // Fields
-        private ObservableCollection<Task> _taskCollection;
+        private ObservableCollection<Model.Task> _taskCollection;
+        private TaskHandler _taskHandler;
 
-        private IPersistancyFactory<Task> _interfacePersistancy;
-        
+
         // Properties
-        public ObservableCollection<Task> TaskCollection
-        {
-            get { return _taskCollection; }
-        }
+        public ObservableCollection<Model.Task> TaskCollection {get; set;}
+
+        
 
         //Constructor
 
         public TaskVm()
         {
-            _taskCollection = new ObservableCollection<Task>();
-            _interfacePersistancy = new PersistencyFactory<Task>();
-            _interfacePersistancy.Load("Tasks");
-
+            _taskHandler = new TaskHandler();
+            TaskCollection = _taskHandler.RetrievedUndoneTaskCollection("Tasks");            
         }
 
     }
