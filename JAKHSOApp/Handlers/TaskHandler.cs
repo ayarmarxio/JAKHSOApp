@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using JAKHSOApp.Interfaces;
 using JAKHSOApp.Persistency;
 using JAKHSOApp.Model;
+using Task = JAKHSOApp.Model.Task;
 
 namespace JAKHSOApp.Handlers
 {
@@ -20,5 +21,8 @@ namespace JAKHSOApp.Handlers
             ObservableCollection<Model.Task> taskCollection = _loadTaskFromPersistancy.RetrieveCollection(targetTable);
             return taskCollection;
         }
+
+       
     }
+
 }

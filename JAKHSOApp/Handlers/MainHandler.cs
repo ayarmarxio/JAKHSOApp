@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace JAKHSOApp.Handlers
 {
-    class MainHandler
+     public class MainHandler
     {
+       
     }
 }

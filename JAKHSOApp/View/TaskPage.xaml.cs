@@ -29,7 +29,7 @@ namespace JAKHSOApp.View
 
         private void TaskList_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-
+            this.Frame.Navigate(typeof(MainPage));
         }
     }
 }
