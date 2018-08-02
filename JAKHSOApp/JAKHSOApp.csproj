@@ -95,6 +95,19 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Commons\FrameNavigate.cs" />
+    <Compile Include="Commons\PropertyChangeClass.cs" />
+    <Compile Include="Commons\RelayCommand.cs" />
+    <Compile Include="Handlers\MainHandler.cs" />
+    <Compile Include="Handlers\TaskHandler.cs" />
+    <Compile Include="Interfaces\IPersistancyFactory.cs" />
+    <Compile Include="Model\Equipment.cs" />
+    <Compile Include="Model\Station.cs" />
+    <Compile Include="Model\Task.cs" />
+    <Compile Include="Model\User.cs" />
+    <Compile Include="Persistency\PersistencyFactory.cs" />
+    <Compile Include="ViewModel\MainVm.cs" />
+    <Compile Include="ViewModel\TaskVm.cs" />
     <Compile Include="View\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
@@ -110,6 +123,12 @@
     <None Include="JAKHSOApp_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\download.png" />
+    <Content Include="Assets\Icon.png" />
+    <Content Include="Assets\JAKHSOApp.png" />
+    <Content Include="Assets\Loginbackground.jpg" />
+    <Content Include="Assets\JAKHSOLogo.png" />
+    <Content Include="Assets\TaskPagepic.jpg" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />
@@ -137,6 +156,12 @@
     <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform">
       <Version>6.0.8</Version>
     </PackageReference>
+    <PackageReference Include="Newtonsoft.Json">
+      <Version>11.0.2</Version>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Singleton\" />
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
