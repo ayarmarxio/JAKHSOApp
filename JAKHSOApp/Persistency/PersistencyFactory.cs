@@ -8,27 +8,30 @@ using System.Text;
 using System.Threading.Tasks;
 using Windows.UI.Popups;
 using JAKHSOApp.Interfaces;
+using JAKHSOApp.Model;
 using  Newtonsoft.Json;
 
 namespace JAKHSOApp.Persistency
 {
-    public class PersistencyFactory<T>: IPersistancyFactory<T> where T: class 
+    public class PersistencyFactory<T>: IPersistancyFactory<T> where T : class
     {
 
         #region
+
         // instance fields
         // Server URL is our web Api URL
         private const string ServerUrl = "http://webappjakhso20180801025902.azurewebsites.net/";
-         // another web api http://jakhsowebapp20180801104841.azurewebsites.net/
+        // another web api http://jakhsowebapp20180801104841.azurewebsites.net/
 
         public string ApiPrefix = "api/";
         private HttpClientHandler _httpClientHandler;
         private HttpClient _httpClient;
+
         #endregion
 
         public async Task<ObservableCollection<T>> Load(string apiId)
         {
-            _httpClientHandler = new HttpClientHandler() { UseDefaultCredentials = true };
+            _httpClientHandler = new HttpClientHandler() {UseDefaultCredentials = true};
 
             using (_httpClient = new HttpClient(_httpClientHandler))
             {
@@ -54,13 +57,27 @@ namespace JAKHSOApp.Persistency
                 }
                 return null;
             }
+
         }
 
-        public ObservableCollection<T> RetrieveCollection (string targetTable)
+        ObservableCollection<T> RetrieveCollection(string targetTable)
         {
             Task<ObservableCollection<T>> loadedFromAzure = this.Load(targetTable);
+
             ObservableCollection<T> collection = loadedFromAzure.Result;
             return collection;
         }
+
     }
-}
+
+        }
+        
+                
+               
+                    
+                
+           
+                
+            
+        
+
