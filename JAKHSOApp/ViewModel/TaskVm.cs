@@ -19,7 +19,10 @@ namespace JAKHSOApp.ViewModel
 
 
         // Properties
-        public ObservableCollection<Model.Task> TaskCollection {get; set;}
+        public ObservableCollection<Model.Task> TaskCollection {
+
+
+            get; set;}
 
         
 

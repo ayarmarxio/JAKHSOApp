@@ -64,13 +64,13 @@ namespace JAKHSOApp.Model
             set { _doneVar = value; }
         }
 
-        public Task (int taskid, string taskname, string taskschedule, string registration,string tasktype,DateTime duedate,DateTime donedate, string donevar)
+        public Task (int taskid, string taskname, string taskschedule, string tasktype,string registration,DateTime duedate,DateTime donedate, string donevar)
         {
             _taskId = TaskId;
             _taskName = taskname;
             _taskSchedule = taskschedule;
-            _registration = registration;
-            _taskType = TaskType;
+            _taskType = tasktype;
+            _registration = registration;            
             _dueDate = duedate;
             _doneDate = donedate;
             _doneVar = donevar;
