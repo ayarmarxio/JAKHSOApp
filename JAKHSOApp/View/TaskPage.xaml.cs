@@ -26,10 +26,6 @@ namespace JAKHSOApp.View
         {
             this.InitializeComponent();
         }
-
-        private void TaskList_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
+        
     }
 }

@@ -77,30 +77,48 @@
         </StackPanel>
         <StackPanel Name="Taskpage" Grid.Row="1" Grid.Column="1" >
                    
-            <ListView Name="TaskList" Background="Aqua" Height="420px" Width="500"
-                      ItemsSource="{Binding TaskCollection , Mode=TwoWay}" Margin="200,0,200,0">              
-                    <!--<ListView.ItemTemplate>
-                        <DataTemplate>
-                            <Grid>
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="47"/>
-                                    <ColumnDefinition/>
-                                </Grid.ColumnDefinitions>
-                                <Image Width="32" Height="32" 
-                       HorizontalAlignment="Left"/>
-                                <TextBlock Text="{x:Bind}" Foreground="Teal" 
-                           FontSize="23" Grid.Column="1"/>
-                            </Grid>
-                        </DataTemplate>
-                    </ListView.ItemTemplate>-->             
-                </ListView>
+            <ListView Name="TaskList" Background="FloralWhite"  Height="420px" Width="700"
+                      ItemsSource="{Binding TaskCollection, Mode=TwoWay}" Margin="0,0,0,0">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <StackPanel  Margin="0,0,0,8"  Orientation="Vertical">                              
+                                    <RelativePanel>
+                                    <TextBlock x:Name="BlockDate" Text="DueDate:" Margin ="0,3,0,0" FontSize="13" Foreground="DarkOliveGreen"/>
+                                        <TextBlock x:Name="DateBlock" Text="{Binding DueDate, Mode=TwoWay }"
+                                                   RelativePanel.AlignBottomWith="BlockDate" RelativePanel.RightOf="BlockDate"
+                                                   Margin="47,0,0,0" FontSize="15" Foreground="DarkOliveGreen"/>
+                                    </RelativePanel>
+                                    <RelativePanel Width="350">
+                                    <TextBlock x:Name="BlockName" Text="Task: " Margin ="0,3,0,0" FontSize="13" Foreground="DarkOliveGreen"  />
+                                        <TextBlock x:Name="NameBlock" Text="{Binding TaskName, Mode=TwoWay}"
+                                                   RelativePanel.AlignBottomWith="BlockName" RelativePanel.RightOf="BlockName"
+                                                   Margin="40,0,0,0" FontSize="15" Foreground="DarkOliveGreen"/>
+                                    </RelativePanel>
+                                    <RelativePanel>
+                                    <TextBlock x:Name="BlockTeacher" Text="Task Type: " Margin="0,3,0,5" FontSize="13" Foreground="DarkOliveGreen" />
+                                        <TextBlock x:Name="TeacherBlock" Text="{Binding Registration, Mode=TwoWay}"
+                                                   RelativePanel.AlignBottomWith="BlockTeacher" RelativePanel.RightOf="BlockTeacher"
+                                                   Margin="30,0,0,5" FontSize="15" Foreground="DarkOliveGreen" Width="200"/>
+                                    </RelativePanel>                        
+                            </StackPanel>
+                            <StackPanel>
+                                <TextBlock x:Name="RegistrationText" Text="Registration: " Margin ="30,3,0,5" FontSize="12" Foreground="DarkOliveGreen"/>
+                                <TextBox x:Name="TeacherBox" Text="{Binding TaskType, Mode=TwoWay}"
+                                             RelativePanel.AlignBottomWith="RegistrationText" RelativePanel.RightOf="RegistrationText"
+                                             Margin="30,0,0,5" FontSize="15" Foreground="DarkOliveGreen" Width="200" Height="50"/>
+                            </StackPanel>                            
+                        </StackPanel>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
             <Button Name="DoneButton" Content="DONE"
-                    Height="40" Width="500" VerticalAlignment="Center" HorizontalAlignment="Center"
+                    Height="40" Width="700" VerticalAlignment="Center" HorizontalAlignment="Center"
                     Background="DarkOliveGreen" Foreground="AliceBlue" 
                     FontSize="15"></Button>
             <StackPanel Name="DeleteEditButtons" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">               
             <Button Name="DeleteButton" Content="DELETE" 
-                    Height="40" Width="500" FontSize="15" 
+                    Height="40" Width="700" FontSize="15" 
                     Background="darkolivegreen" Foreground="AliceBlue"/>
             </StackPanel>
         </StackPanel>

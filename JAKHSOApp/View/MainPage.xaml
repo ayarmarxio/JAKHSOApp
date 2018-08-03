@@ -29,17 +29,15 @@
             <TextBlock Text="USERNAME"
                        HorizontalAlignment="Left" Margin="0,70,0,0"
                        Foreground="#454b53" />
-            <TextBox Text="{Binding CurrentUser.Username, Mode=TwoWay}"
-                     Height="40" Width="250" Margin="0,5,0,10"
+            <TextBox Height="40" Width="250" Margin="0,5,0,10"
                      BorderThickness="2" Background="Transparent" FontSize="23" BorderBrush="#454b53"/>
             <TextBlock Text="PASSWORD" 
                        HorizontalAlignment="Left" Margin="0,20,0,0"
                        Foreground="#454b53"/>
-            <PasswordBox   Password="{Binding CurrentUser.UserPassword, Mode=TwoWay}" 
-                           Margin="0,5,0,10" VerticalAlignment="Stretch"
+            <PasswordBox   Margin="0,5,0,10" VerticalAlignment="Stretch"
                            FontSize="23" Height="40" Width="250" Background="Transparent" 
                            BorderBrush="#454b53" BorderThickness="2"/>
-            <Button Content="LOG IN" Command="{Binding CheckCommand}"
+            <Button Content="LOG IN" Click="Button_Click"
                     HorizontalAlignment="Center" Margin="0,40,0,0" VerticalAlignment="Center"
                     Width ="250" Height ="50"
                     FontSize="20" Foreground="#454b53" Background="#b0e0d4" BorderBrush="Transparent"/>
