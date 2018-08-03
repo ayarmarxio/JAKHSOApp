@@ -15,7 +15,8 @@ namespace JAKHSOApp.Persistency
     public class PersistencyFactory<T>: IPersistancyFactory<T> where T: class 
     {
 
-        #region instance fields
+        #region
+        // instance fields
         // Server URL is our web Api URL
         private const string ServerUrl = "http://webappjakhso20180801025902.azurewebsites.net/";
          // another web api http://jakhsowebapp20180801104841.azurewebsites.net/
