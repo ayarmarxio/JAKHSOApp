@@ -17,10 +17,12 @@ namespace JAKHSOApp.Handlers
        
         private IPersistancyFactory<Model.Task> _loadTaskFromPersistancy = new PersistencyFactory<Model.Task>();
         private IPersistancyFactory<Station> _loadStationkFromPersistancy = new PersistencyFactory<Station>();
+       
         private FrameNavigate _frameNavigate;
 
 
         public ObservableCollection<Station> StationCollection { get; set; }
+        
 
         public ObservableCollection<Model.Task> RetrievedUndoneTaskCollection(string targetTable)
         {
@@ -30,14 +32,17 @@ namespace JAKHSOApp.Handlers
 
         public ObservableCollection<Station> RetrieveStationsCollection(string StargetTable)
         {
-            ObservableCollection<Station> StationCollection = _loadStationkFromPersistancy.RetrieveCollection(StargetTable);
+            ObservableCollection<Model.Station> StationCollection = _loadStationkFromPersistancy.RetrieveCollection(StargetTable);
             return StationCollection;
-        }
 
+        }
+       
         public void GoToStationPage()
         {
             _frameNavigate = new FrameNavigate();
             _frameNavigate.ActivateFrameNavigation(typeof(StationPage));
         }
+
+       
     }
 }
