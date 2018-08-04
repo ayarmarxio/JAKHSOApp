@@ -19,49 +19,41 @@ namespace JAKHSOApp.Model
 
         public int TaskId
         {
-            get { return _taskId; }
-            set { _taskId = value; }
+            get { return _taskId; } set { _taskId = value; }
         }
         public string TaskName
         {
-            get { return _taskName; }
-            set { _taskName= value; }
+            get { return _taskName; } set { _taskName= value; }
         }
 
         public string TaskSchedule
         {
-            get { return _taskSchedule; }
-            set { _taskSchedule = value; }
+            get { return _taskSchedule; } set { _taskSchedule = value; }
         }
 
         public string Registration
         {
-            get { return _registration; }
-            set { _registration = value; }
+            get { return _registration; } set { _registration = value; }
         }
 
         public string TaskType
         {
-            get { return _taskType; }
-            set { _taskType= value; }
+            get { return _taskType; } set { _taskType= value; }
         }
 
         public DateTime DueDate
         {
-            get { return _dueDate; }
-            set { _dueDate = value; }
+            get { return _dueDate; } set { _dueDate = value; }
         }
 
         public DateTime DoneDate
         {
-            get { return _doneDate; }
-            set { _doneDate= value; }
+            get { return _doneDate; } set { _doneDate= value; }
         }
 
         public string DoneVar
         {
-            get { return _doneVar; }
-            set { _doneVar = value; }
+            get { return _doneVar; } set { _doneVar = value; }
         }
 
         public Task (int taskid, string taskname, string taskschedule, string tasktype,string registration,DateTime duedate,DateTime donedate, string donevar)
