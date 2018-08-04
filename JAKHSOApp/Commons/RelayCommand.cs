@@ -24,6 +24,7 @@ namespace JAKHSOApp.Commons
         {
         }
         /// <summary>
+        /// 
         /// Creates a new command.
         /// </summary>
         /// <param name="execute">The execution logic.</param>
