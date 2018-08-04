@@ -8,21 +8,27 @@ using JAKHSOApp.Handlers;
 using JAKHSOApp.Interfaces;
 using JAKHSOApp.Persistency;
 using JAKHSOApp.Model;
+using JAKHSOApp.Commons;
 
 namespace JAKHSOApp.ViewModel
 {
     public class TaskVm
     {
         // Fields
-        private ObservableCollection<Model.Task> _taskCollection;
+      
         private TaskHandler _taskHandler;
+
+        public RelayCommand GoToStationPage { get; set; }
+
+        public ObservableCollection<Station> StationCollection
+        {
+            get { return _taskHandler.StationCollection; }
+        }
+            
 
 
         // Properties
-        public ObservableCollection<Model.Task> TaskCollection {
-
-
-            get; set;}
+        public ObservableCollection<Model.Task> TaskCollection {get; set;}
 
         
 
@@ -31,7 +37,8 @@ namespace JAKHSOApp.ViewModel
         public TaskVm()
         {
             _taskHandler = new TaskHandler();
-            TaskCollection = _taskHandler.RetrievedUndoneTaskCollection("Tasks");            
+            TaskCollection = _taskHandler.RetrievedUndoneTaskCollection("Tasks");
+            GoToStationPage = new RelayCommand(_taskHandler.GoToStationPage);
         }
 
     }
