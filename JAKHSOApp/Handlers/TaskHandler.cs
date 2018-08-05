@@ -17,11 +17,18 @@ namespace JAKHSOApp.Handlers
        
         private IPersistancyFactory<Model.Task> _loadTaskFromPersistancy = new PersistencyFactory<Model.Task>();
         private IPersistancyFactory<Station> _loadStationkFromPersistancy = new PersistencyFactory<Station>();
+        private IPersistancyFactory<Equipment> _loadEquipmentFromPersistancy = new PersistencyFactory<Equipment>();
+
+
        
         private FrameNavigate _frameNavigate;
 
 
         public ObservableCollection<Station> StationCollection { get; set; }
+
+        //edit  putting equipment observablecollection
+        public ObservableCollection<Equipment> EquipmentCollection { get; set; }
+
         
 
         public ObservableCollection<Model.Task> RetrievedUndoneTaskCollection(string targetTable)
@@ -36,6 +43,15 @@ namespace JAKHSOApp.Handlers
             return StationCollection;
 
         }
+        //putting equipment
+        public ObservableCollection<Equipment> RetriveEquipmentsCollection(string StargetTable)
+        {
+            ObservableCollection<Model.Equipment> EquipmentCollection = _loadEquipmentFromPersistancy.RetrieveCollection(StargetTable);
+            return EquipmentCollection;
+        }
+        
+
+
        
         public void GoToStationPage()
         {
@@ -43,6 +59,15 @@ namespace JAKHSOApp.Handlers
             _frameNavigate.ActivateFrameNavigation(typeof(StationPage));
         }
 
-       
+        //putting equipment
+        public void GoToEquipmentPage()
+        {
+            _frameNavigate = new FrameNavigate();
+            _frameNavigate.ActivateFrameNavigation(typeof(EquipmentPage));
+        }
+
+
+
+
     }
 }

@@ -106,9 +106,14 @@
     <Compile Include="Model\Task.cs" />
     <Compile Include="Model\User.cs" />
     <Compile Include="Persistency\PersistencyFactory.cs" />
+    <Compile Include="ViewModel\EquipmentVm.cs" />
     <Compile Include="ViewModel\MainVm.cs" />
     <Compile Include="ViewModel\StationVM.cs" />
     <Compile Include="ViewModel\TaskVm.cs" />
+    <Compile Include="ViewModel\UserVm.cs" />
+    <Compile Include="View\EquipmentPage.xaml.cs">
+      <DependentUpon>EquipmentPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
@@ -147,6 +152,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="View\EquipmentPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\MainPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
