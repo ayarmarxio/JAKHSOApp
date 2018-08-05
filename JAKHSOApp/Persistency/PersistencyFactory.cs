@@ -6,8 +6,15 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
+using Windows.ApplicationModel.Activation;
+using Windows.UI.Composition;
+using Windows.UI.Core;
 using Windows.UI.Popups;
+using Windows.UI.Xaml;
+using Windows.UI.Xaml.Controls;
+using Windows.UI.Xaml.Navigation;
 using JAKHSOApp.Interfaces;
+using JAKHSOApp.Model;
 using  Newtonsoft.Json;
 
 namespace JAKHSOApp.Persistency
@@ -61,5 +68,11 @@ namespace JAKHSOApp.Persistency
             ObservableCollection<T> collection = loadedFromAzure.Result;
             return collection;
         }
+
+       
+
+         
+
+        }
     }
-}
+

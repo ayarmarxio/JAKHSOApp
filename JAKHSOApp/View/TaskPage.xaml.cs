@@ -24,8 +24,17 @@ namespace JAKHSOApp.View
     {
         public TaskPage()
         {
-            this.InitializeComponent();
+            InitializeComponent();
+
+
+
+
+        }
+
+      
+                
+            }
         }
         
-    }
-}
+    
+
