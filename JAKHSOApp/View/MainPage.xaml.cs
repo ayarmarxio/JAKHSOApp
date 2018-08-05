@@ -30,7 +30,7 @@ namespace JAKHSOApp
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            Frame.Navigate(typeof(TaskPage));
+            this.Frame.Navigate(typeof(TaskPage));
         }
     }
 }
