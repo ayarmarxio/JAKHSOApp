@@ -47,12 +47,12 @@
 
             <StackPanel Grid.Row="1" Grid.Column="0" Background="#454b53">
 
-                <Button Content="TASKS" 
+                <Button Content="TASKS"  Command="{Binding GotoTaskPage, Mode=TwoWay}"
                     HorizontalAlignment="Center" VerticalAlignment="Center"
                     Width ="250" Height ="75"
                     FontSize="23" Foreground="White" BorderBrush="Transparent" Background="Transparent"/>
                 <Line Fill="White" Stroke="White" Height="0.5" StrokeThickness="2" X1="480"/>
-                <Button Content="STATIONS" Command="{Binding LoadStations, Mode=TwoWay}"
+                <Button Content="STATIONS" Command="{Binding GotoStationPage, Mode=TwoWay}"
                     Margin="0,0,0,0" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center"
                     Width ="250" Height ="75"
                     FontSize="23" Foreground="White" BorderBrush="Transparent" Background="Transparent"/>

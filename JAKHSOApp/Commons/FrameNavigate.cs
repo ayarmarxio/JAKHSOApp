@@ -25,5 +25,7 @@ namespace JAKHSOApp.Commons
             Window.Current.Content = frame;
             Window.Current.Activate();
         }
+       
+
     }
 }

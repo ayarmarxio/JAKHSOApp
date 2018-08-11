@@ -9,6 +9,8 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
+    
+        
     <Grid>
         <Grid.DataContext>
             <viewModel:EquipmentVm/>
@@ -53,25 +55,26 @@
 
         <StackPanel Grid.Row="1" Grid.Column="0" Background="#454b53">
 
-            <Button Content="TASKS" 
+            <Button Content="TASKS"  
                     HorizontalAlignment="Center" VerticalAlignment="Center"
                     Width ="250" Height ="75"
                     FontSize="23" Foreground="White" BorderBrush="Transparent" Background="Transparent"/>
             <Line Fill="White" Stroke="White" Height="0.5" StrokeThickness="2" X1="480"/>
-            <Button Content="EQUIPMENT" Command="{Binding GoToEquipmentPage, Mode=TwoWay}"
+            <Button Content="STATION"
                     Margin="0,0,0,0" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center"
                     Width ="250" Height ="75"
                     FontSize="23" Foreground="White" BorderBrush="Transparent" Background="Transparent"/>
             <Line Fill="White" Stroke="White" Height="0.5" StrokeThickness="2" X1="480"/>
-            <Button Content="EQUIPMENT"  
-                    Margin="0,0,0,0" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center"
+            <HyperlinkButton Content="EQUIPMENT"  Command="{Binding LoadEquipmentPage, Mode=TwoWay}"
+                   Margin="0,0,0,0" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center"
                     Width ="250" Height ="75"
-                    FontSize="23" Foreground="White"  BorderBrush="Transparent" Background="Transparent"/>
+             
+                    FontSize="23" Foreground="White"  BorderBrush="Transparent" Background="Transparent" Click="Button_Click"/>
             <Line Fill="White" Stroke="White" Height="0.5" StrokeThickness="2" X1="480"/>
             <Button Content="USERS"  
                     Margin="0,0,0,0" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center"
                     Width ="250" Height ="75"
-                    FontSize="23" Foreground="White" BorderBrush="Transparent" Background="Transparent"/>
+                    FontSize="23" Foreground="White" BorderBrush="Transparent" Background="Transparent" />
             <Line Fill="White" Stroke="White" Height="0.5" StrokeThickness="2" X1="480"/>
             <Button Content="HISTORY" 
                     Margin="0,0,0,0" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center"
@@ -80,56 +83,29 @@
             <Line Fill="White" Stroke="White" Height="0.5" StrokeThickness="2" X1="480"/>
         </StackPanel>
         <StackPanel Name="Taskpage" Grid.Row="1" Grid.Column="1" >
-
-            <ListView Name="TaskList" Background="FloralWhite"  Height="420px" Width="700"
+            <ListView Name="EquipmentList" Background="SkyBlue"  Height="420px" Width="700"
                       ItemsSource="{Binding EquipmentCollection, Mode=TwoWay}" Margin="0,0,0,0">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <StackPanel Orientation="Horizontal">
                             <StackPanel  Margin="0,0,0,8"  Orientation="Vertical">
                                 <RelativePanel>
-                                    <TextBlock x:Name="BlockDate" Text="DueDate:" Margin ="0,3,0,0" FontSize="13" Foreground="DarkOliveGreen"/>
-                                    <TextBlock x:Name="DateBlock" Text="{Binding DueDate, Mode=TwoWay }"
-                                                   RelativePanel.AlignBottomWith="BlockDate" RelativePanel.RightOf="BlockDate"
+                                    <TextBlock x:Name="BlockName" Text="Equipment Name:" Margin ="0,3,0,0" FontSize="13" Foreground="DarkOliveGreen"/>
+                                    <TextBlock x:Name="DateBlock" Text="{Binding EquipmentName, Mode=TwoWay }"
+                                                   RelativePanel.AlignBottomWith="BlockName" RelativePanel.RightOf="BlockName"
                                                    Margin="47,0,0,0" FontSize="15" Foreground="DarkOliveGreen"/>
                                 </RelativePanel>
-                                <RelativePanel Width="350">
-                                    <TextBlock x:Name="BlockName" Text="Task: " Margin ="0,3,0,0" FontSize="13" Foreground="DarkOliveGreen"  />
-                                    <TextBlock x:Name="NameBlock" Text="{Binding TaskName, Mode=TwoWay}"
-                                                   RelativePanel.AlignBottomWith="BlockName" RelativePanel.RightOf="BlockName"
-                                                   Margin="40,0,0,0" FontSize="15" Foreground="DarkOliveGreen"/>
-                                </RelativePanel>
-                                <RelativePanel>
-                                    <TextBlock x:Name="BlockTeacher" Text="Task Type: " Margin="0,3,0,5" FontSize="13" Foreground="DarkOliveGreen" />
-                                    <TextBlock x:Name="TeacherBlock" Text="{Binding Registration, Mode=TwoWay}"
-                                                   RelativePanel.AlignBottomWith="BlockTeacher" RelativePanel.RightOf="BlockTeacher"
-                                                   Margin="30,0,0,5" FontSize="15" Foreground="DarkOliveGreen" Width="200"/>
-                                </RelativePanel>
-                            </StackPanel>
-                            <StackPanel>
-                                <TextBlock x:Name="RegistrationText" Text="Registration: " Margin ="30,3,0,5" FontSize="12" Foreground="DarkOliveGreen"/>
-                                <TextBox x:Name="TeacherBox" Text="{Binding EquipmentType, Mode=TwoWay}"
-                                             RelativePanel.AlignBottomWith="RegistrationText" RelativePanel.RightOf="RegistrationText"
-                                             Margin="30,0,0,5" FontSize="15" Foreground="DarkOliveGreen" Width="200" Height="50"/>
+                               
                             </StackPanel>
                         </StackPanel>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
-            <Button Name="DoneButton" Content="DONE"
-                    Height="40" Width="700" VerticalAlignment="Center" HorizontalAlignment="Center"
-                    Background="DarkOliveGreen" Foreground="AliceBlue" 
-                    FontSize="15"></Button>
-            <StackPanel Name="DeleteEditButtons" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
-                <Button Name="DeleteButton" Content="DELETE" 
-                    Height="40" Width="700" FontSize="15" 
-                    Background="darkolivegreen" Foreground="AliceBlue"/>
-            </StackPanel>
         </StackPanel>
-    </Grid>
+        </Grid>
+        
 
 
 
 
-    
 </Page>

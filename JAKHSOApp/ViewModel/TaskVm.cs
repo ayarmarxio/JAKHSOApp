@@ -19,19 +19,21 @@ namespace JAKHSOApp.ViewModel
         private TaskHandler _taskHandler;
 
         public RelayCommand GoToStationPage { get; set; }
+        public RelayCommand GoToEquipmentPage { get; set; }
+
+        public ObservableCollection<Equipment> EquipmentCollection
+        {
+            get { return _taskHandler.EquipmentCollection; }
+        }
 
         public ObservableCollection<Station> StationCollection
         {
             get { return _taskHandler.StationCollection; }
         }
-            
-
 
         // Properties
         public ObservableCollection<Model.Task> TaskCollection {get; set;}
-
         
-
         //Constructor
 
         public TaskVm()
@@ -40,6 +42,7 @@ namespace JAKHSOApp.ViewModel
             TaskCollection = _taskHandler.RetrievedUndoneTaskCollection("Tasks");
             GoToStationPage = new RelayCommand(_taskHandler.GoToStationPage);
         }
+
 
     }
 }

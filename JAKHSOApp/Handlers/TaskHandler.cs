@@ -16,8 +16,8 @@ namespace JAKHSOApp.Handlers
     {
        
         private IPersistancyFactory<Model.Task> _loadTaskFromPersistancy = new PersistencyFactory<Model.Task>();
-        private IPersistancyFactory<Station> _loadStationkFromPersistancy = new PersistencyFactory<Station>();
-        private IPersistancyFactory<Equipment> _loadEquipmentFromPersistancy = new PersistencyFactory<Equipment>();
+        private IPersistancyFactory<Model.Station> _loadStationkFromPersistancy = new PersistencyFactory<Model.Station>();
+        private IPersistancyFactory<Model.Equipment> _loadEquipmentFromPersistancy = new PersistencyFactory<Model.Equipment>();
 
 
        
@@ -26,10 +26,14 @@ namespace JAKHSOApp.Handlers
 
         public ObservableCollection<Station> StationCollection { get; set; }
 
+        internal void GoToUserPage()
+        {
+            throw new NotImplementedException();
+        }
+
         //edit  putting equipment observablecollection
         public ObservableCollection<Equipment> EquipmentCollection { get; set; }
-
-        
+        public ObservableCollection<User> UserCollection { get; internal set; }
 
         public ObservableCollection<Model.Task> RetrievedUndoneTaskCollection(string targetTable)
         {
@@ -37,16 +41,16 @@ namespace JAKHSOApp.Handlers
             return taskCollection;
         }
 
-        public ObservableCollection<Station> RetrieveStationsCollection(string StargetTable)
+        public ObservableCollection<Station> RetrieveStationCollection(string targetTable)
         {
-            ObservableCollection<Model.Station> StationCollection = _loadStationkFromPersistancy.RetrieveCollection(StargetTable);
+            ObservableCollection<Model.Station> StationCollection = _loadStationkFromPersistancy.RetrieveCollection(targetTable);
             return StationCollection;
 
         }
         //putting equipment
-        public ObservableCollection<Equipment> RetriveEquipmentsCollection(string StargetTable)
+        public ObservableCollection<Equipment> RetriveEquipmentsCollection(string targetTable)
         {
-            ObservableCollection<Model.Equipment> EquipmentCollection = _loadEquipmentFromPersistancy.RetrieveCollection(StargetTable);
+            ObservableCollection<Model.Equipment> EquipmentCollection = _loadEquipmentFromPersistancy.RetrieveCollection(targetTable);
             return EquipmentCollection;
         }
         

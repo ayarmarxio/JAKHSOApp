@@ -6,6 +6,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using JAKHSOApp.Commons;
 
 namespace JAKHSOApp.ViewModel
 {
@@ -13,14 +14,21 @@ namespace JAKHSOApp.ViewModel
     {
 
         private TaskHandler _taskHandler;
+        
+        public RelayCommand GoToEquipmentPage { get; set; }
 
-        public ObservableCollection<Station> StationCollection  { get; set; }
+        public ObservableCollection<Equipment> EquipmentsCollection
+        {
+            get { return _taskHandler.EquipmentCollection; }
+        }
+        public ObservableCollection<Model.Station> StationCollection { get; set; }
 
 
         public StationVM()
         {
             _taskHandler = new TaskHandler();
-            StationCollection = _taskHandler.RetrieveStationsCollection("Stations");
+            StationCollection = _taskHandler. RetrieveStationCollection("Stations");
+            GoToEquipmentPage = new RelayCommand(_taskHandler.GoToEquipmentPage);
         }
     }
 }
