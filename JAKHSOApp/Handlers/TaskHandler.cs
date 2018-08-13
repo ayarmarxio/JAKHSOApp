@@ -20,16 +20,16 @@ namespace JAKHSOApp.Handlers
         private IPersistancyFactory<Model.Equipment> _loadEquipmentFromPersistancy = new PersistencyFactory<Model.Equipment>();
 
 
-       
+
         private FrameNavigate _frameNavigate;
-
-
-        public ObservableCollection<Station> StationCollection { get; set; }
 
         internal void GoToUserPage()
         {
             throw new NotImplementedException();
         }
+        public ObservableCollection<Station> StationCollection { get; set; }
+
+     
 
         //edit  putting equipment observablecollection
         public ObservableCollection<Equipment> EquipmentCollection { get; set; }
@@ -53,10 +53,10 @@ namespace JAKHSOApp.Handlers
             ObservableCollection<Model.Equipment> EquipmentCollection = _loadEquipmentFromPersistancy.RetrieveCollection(targetTable);
             return EquipmentCollection;
         }
-        
 
 
-       
+
+
         public void GoToStationPage()
         {
             _frameNavigate = new FrameNavigate();
@@ -70,7 +70,7 @@ namespace JAKHSOApp.Handlers
             _frameNavigate.ActivateFrameNavigation(typeof(EquipmentPage));
         }
 
-
+   
 
 
     }

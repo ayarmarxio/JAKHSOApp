@@ -39,28 +39,28 @@
                 <Image Source="../Assets/JAKHSOApp.png" Height="23px" HorizontalAlignment="Left"/>
             </StackPanel>
 
-            <Button  Content="LOG OUT"
+            <HyperlinkButton Content="LOG OUT"
                     Margin="0,0,0,0" Grid.Column="2" Grid.Row="0"  HorizontalAlignment="Center" VerticalAlignment="Center"
                     Width ="250" Height ="50" 
-                    FontSize="20" Foreground="AliceBlue" Background="DarkOliveGreen" BorderBrush="Transparent"/>
+                    FontSize="20" Foreground="AliceBlue" Background="DarkOliveGreen" BorderBrush="Transparent" Click="HyperlinkButton_Click"/>
 
 
             <StackPanel Grid.Row="1" Grid.Column="0" Background="#454b53">
 
-                <Button Content="TASKS"  Command="{Binding GotoTaskPage, Mode=TwoWay}"
+                <Button Content="TASKS" 
                     HorizontalAlignment="Center" VerticalAlignment="Center"
                     Width ="250" Height ="75"
-                    FontSize="23" Foreground="White" BorderBrush="Transparent" Background="Transparent"/>
+                    FontSize="23" Foreground="White" BorderBrush="Transparent" Background="Transparent" Click="Button_Click"/>
                 <Line Fill="White" Stroke="White" Height="0.5" StrokeThickness="2" X1="480"/>
-                <Button Content="STATIONS" Command="{Binding GotoStationPage, Mode=TwoWay}"
+                <Button Content="STATIONS" Command="{Binding StationCollection, Mode=TwoWay}"
                     Margin="0,0,0,0" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center"
                     Width ="250" Height ="75"
-                    FontSize="23" Foreground="White" BorderBrush="Transparent" Background="Transparent"/>
+                    FontSize="23" Foreground="White" BorderBrush="Transparent" Background="Transparent"  />
                 <Line Fill="White" Stroke="White" Height="0.5" StrokeThickness="2" X1="480"/>
                 <Button Content="EQUIPMENT"  
                     Margin="0,0,0,0" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center"
                     Width ="250" Height ="75"
-                    FontSize="23" Foreground="White"  BorderBrush="Transparent" Background="Transparent"/>
+                    FontSize="23" Foreground="White"  BorderBrush="Transparent" Background="Transparent" Click="Button_Click"/>
                 <Line Fill="White" Stroke="White" Height="0.5" StrokeThickness="2" X1="480"/>
                 <Button Content="USERS"  
                     Margin="0,0,0,0" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center"
@@ -73,10 +73,10 @@
                     FontSize="23" Foreground="White" BorderBrush="Transparent" Background="Transparent"/>
                 <Line Fill="White" Stroke="White" Height="0.5" StrokeThickness="2" X1="480"/>
             </StackPanel>
-            <StackPanel Name="Taskpage" Grid.Row="1" Grid.Column="1">
+            <StackPanel Name="Stationpage" Grid.Row="1" Grid.Column="1">
 
                 <ListView Name="StationList" Background="FloralWhite"  Height="420px" Width="700"
-                      ItemsSource="{Binding StationCollection, Mode=TwoWay}" Margin="0,0,0,0">
+                      ItemsSource="{Binding StationCollection, Mode=TwoWay}" Margin="0,0,0,0" SelectionChanged="StationList_SelectionChanged">
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <StackPanel Orientation="Horizontal">
@@ -98,7 +98,18 @@
                         </DataTemplate>
                     </ListView.ItemTemplate>
                 </ListView>
-            </StackPanel>
+                <Button Name="DoneButton" Content="DONE"
+                        Height="40" Width="700" VerticalAlignment="Center" HorizontalAlignment="Center"
+                        Background="DarkOliveGreen" Foreground="AliceBlue" 
+                        FontSize="15"></Button>
+                <StackPanel Name="DeleteEditButtons" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <Button Name="DeleteButton" Content="DELETE" 
+                            Height="40" Width="700" FontSize="15" 
+                            Background="darkolivegreen" Foreground="AliceBlue"/>
+
+                     </StackPanel>
+
+                </StackPanel>
         </Grid>
     </Grid>
 </Page>

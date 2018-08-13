@@ -27,9 +27,36 @@ namespace JAKHSOApp.View
             this.InitializeComponent();
         }
 
+       
+
+        private void EquipmentList_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+           
+        }
+
+        private void ButtonBase_OnClick_(object sender, RoutedEventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void Button_Click_(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(UserPage));
+        }
+
+        private void HyperlinkButton_Click(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(MainPage));
+        }
+
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            this.Frame.Navigate(typeof(EquipmentPage));
+            Frame.Navigate(typeof(TaskPage));
+        }
+
+        private void ButtonBase_OnClick(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(StationPage));
         }
     }
 }

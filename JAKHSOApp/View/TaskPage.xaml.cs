@@ -25,11 +25,20 @@ namespace JAKHSOApp.View
         public TaskPage()
         {
             InitializeComponent();
-
+            
         }
 
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(StationPage));
+        }
+
+        private void HyperlinkButton_Click(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(MainPage));
+        }
     }
-        }
-        
+}
     
 

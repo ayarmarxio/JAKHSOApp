@@ -20,32 +20,11 @@ namespace JAKHSOApp.View
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class StationPage : Page
+    public sealed partial class UserPage : Page
     {
-        public StationPage()
+        public UserPage()
         {
             this.InitializeComponent();
         }
-
-      
-
-        private void StationList_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-           
-        }
-
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            Frame.Navigate(typeof(EquipmentPage));
-        }
-
-        private void HyperlinkButton_Click(object sender, RoutedEventArgs e)
-        {
-            Frame.Navigate(typeof(MainPage));
-        }
-
-      
     }
-      
 }

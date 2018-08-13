@@ -19,7 +19,7 @@ namespace JAKHSOApp.ViewModel
         private TaskHandler _taskHandler;
 
         public RelayCommand GoToStationPage { get; set; }
-        public RelayCommand GoToEquipmentPage { get; set; }
+        //public RelayCommand GoToEquipmentPage { get; set; }
 
         public ObservableCollection<Equipment> EquipmentCollection
         {
