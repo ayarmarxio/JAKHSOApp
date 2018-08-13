@@ -69,10 +69,10 @@ namespace JAKHSOApp.Persistency
             return collection;
         }
 
-       
-
-         
-
+        public ObservableCollection<User> RetriveCollection(string targetTable)
+        {
+            throw new NotImplementedException();
         }
+    }
     }
 

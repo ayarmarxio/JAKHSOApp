@@ -21,19 +21,23 @@ namespace JAKHSOApp.ViewModel
         public RelayCommand GoToStationPage { get; set; }
         //public RelayCommand GoToEquipmentPage { get; set; }
 
-        public ObservableCollection<Equipment> EquipmentCollection
-        {
-            get { return _taskHandler.EquipmentCollection; }
-        }
+        //public ObservableCollection<Equipment> EquipmentCollection
+        //{
+        //    get { return _taskHandler.EquipmentCollection; }
+        //}
 
+       
+
+        // Properties
+        public ObservableCollection<Model.Task> TaskCollection {get; set;}
         public ObservableCollection<Station> StationCollection
         {
             get { return _taskHandler.StationCollection; }
         }
 
-        // Properties
-        public ObservableCollection<Model.Task> TaskCollection {get; set;}
-        
+
+
+
         //Constructor
 
         public TaskVm()

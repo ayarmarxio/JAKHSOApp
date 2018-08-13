@@ -17,10 +17,10 @@ namespace JAKHSOApp.ViewModel
         
         public RelayCommand GoToEquipmentPage { get; set; }
 
-        public ObservableCollection<Equipment> EquipmentsCollection
-        {
-            get { return _taskHandler.EquipmentCollection; }
-        }
+        //public ObservableCollection<Equipment> EquipmentsCollection
+        //{
+        //    get { return _taskHandler.EquipmentCollection; }
+        //}
         public ObservableCollection<Model.Station> StationCollection { get; set; }
 
 

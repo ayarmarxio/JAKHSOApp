@@ -14,5 +14,6 @@ namespace JAKHSOApp.Interfaces
         
 
         ObservableCollection<T> RetrieveCollection(string targetTable);
+        ObservableCollection<User> RetriveCollection(string targetTable);
     }
 }

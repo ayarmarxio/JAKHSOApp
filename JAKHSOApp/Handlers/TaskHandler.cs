@@ -18,22 +18,24 @@ namespace JAKHSOApp.Handlers
         private IPersistancyFactory<Model.Task> _loadTaskFromPersistancy = new PersistencyFactory<Model.Task>();
         private IPersistancyFactory<Model.Station> _loadStationkFromPersistancy = new PersistencyFactory<Model.Station>();
         private IPersistancyFactory<Model.Equipment> _loadEquipmentFromPersistancy = new PersistencyFactory<Model.Equipment>();
-
+        private IPersistancyFactory<Model.User> _loadUserFromPersistancy = new PersistencyFactory<Model.User>();
 
 
         private FrameNavigate _frameNavigate;
 
-        internal void GoToUserPage()
-        {
-            throw new NotImplementedException();
-        }
+        //internal void GoToUserPage()
+        //{
+        //    throw new NotImplementedException();
+        //}
         public ObservableCollection<Station> StationCollection { get; set; }
 
-     
+
 
         //edit  putting equipment observablecollection
         public ObservableCollection<Equipment> EquipmentCollection { get; set; }
-        public ObservableCollection<User> UserCollection { get; internal set; }
+
+        public ObservableCollection<User> UserCollection { get; set; }
+
 
         public ObservableCollection<Model.Task> RetrievedUndoneTaskCollection(string targetTable)
         {
@@ -41,7 +43,12 @@ namespace JAKHSOApp.Handlers
             return taskCollection;
         }
 
-        public ObservableCollection<Station> RetrieveStationCollection(string targetTable)
+        public ObservableCollection<User> RetriveUndoneUserCollection(string targetTable)
+        {
+            ObservableCollection<User> userCollection = _loadUserFromPersistancy.RetriveCollection(targetTable);
+            return UserCollection;
+        }
+        public ObservableCollection<Model.Station> RetrieveStationCollection(string targetTable)
         {
             ObservableCollection<Model.Station> StationCollection = _loadStationkFromPersistancy.RetrieveCollection(targetTable);
             return StationCollection;
@@ -70,7 +77,11 @@ namespace JAKHSOApp.Handlers
             _frameNavigate.ActivateFrameNavigation(typeof(EquipmentPage));
         }
 
-   
+        public void GoToUserPage()
+        {
+            _frameNavigate = new FrameNavigate();
+            _frameNavigate.ActivateFrameNavigation(typeof(UserPage));
+        }
 
 
     }
